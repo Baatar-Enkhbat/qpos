@@ -1,0 +1,44 @@
+qpos sql
+CREATE TABLE customers(  
+    id int NOT NULL PRIMARY KEY AUTO_INCREMENT COMMENT 'Primary Key',
+    ner VARCHAR(255),
+    email VARCHAR(255),
+    utas VARCHAR(40),
+    pass VARCHAR(32),
+    register_num VARCHAR(15),
+    ip VARCHAR(15),
+    port INTEGER,
+    device_id VARCHAR(100),
+    app_version VARCHAR(10),
+    create_date DATETIME,
+    access_date DATETIME,
+    is_noat INTEGER,
+    is_nhat INTEGER,
+    conf_noat INTEGER,
+    conf_nhat INTEGER,
+    status ENUM('ACTIVE','DISABLED','PAYMENT')
+) DEFAULT CHARSET UTF8 COMMENT '';
+
+CREATE TABLE users(  
+    id int NOT NULL PRIMARY KEY AUTO_INCREMENT COMMENT 'Primary Key',
+    ner VARCHAR(255),
+    utas VARCHAR(40),
+    pass VARCHAR(32),
+    turul VARCHAR(15),
+    status ENUM('ACTIVE','DISABLED')
+) DEFAULT CHARSET UTF8 COMMENT '';
+
+CREATE TABLE `error` (  
+    `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+    `date` DATETIME DEFAULT NULL,
+    `query` TEXT CHARACTER SET utf8 DEFAULT NULL,
+    `error` TEXT DEFAULT NULL,
+    `file` VARCHAR(100) DEFAULT NULL,
+    `referer` VARCHAR(100) DEFAULT NULL,
+    PRIMARY KEY(`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE `debug` (  
+    `value` TEXT CHARACTER SET utf8 DEFAULT NULL,
+    `ognoo` DATETIME
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
