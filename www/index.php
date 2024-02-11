@@ -9,15 +9,33 @@ require SCRIPTS . '/inc/db.php';
 
 $db = new Db(DB_HOST, DB_DATABASE, DB_USER, DB_PASS);
 
-// $arr = $db->col("select utas from users");
-// foreach ($arr as $value) {
-//     echo "<pre>$value";
-// }
+$script = $_SERVER['REQUEST_URI'];
 
-$ner = $db->val("select ner from users where id = 2");
-echo $ner;
+if ($script == '/') {
+    require ROOT . "/scripts/user/login.php";
+    exit;
+}
 
-$db->debug('sain uu' . $ner);
+{
+    $lastchar = substr($script, strlen($script) - 1, 1);
+}
+
+if ($lastchar == '/') {
+    $script = substr($script, 0, -1);
+    $script = ROOT . "/scripts" . $script . ".php";
+} else {
+    // params
+    $tokens = explode('?', $script);
+    require ROOT . "/scripts" . $tokens[0] . ".php";
+    exit;
+}
+
+if (file_exists($script)) {
+    require $script;
+} else {
+    require ROOT . "/scripts/404.php";
+    exit;
+}
 
 function dd($var)
 {
