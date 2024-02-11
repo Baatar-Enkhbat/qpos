@@ -10,10 +10,25 @@
 
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
 
-    <title>:: Crush On :: Page Empty</title>
+    <title>Qpos Борлуулагчийн систем</title>
 
     <!-- Bootstrap Core and vandor -->
     <link rel="stylesheet" href="/assets/plugins/bootstrap/css/bootstrap.min.css" />
+
+    <!-- Plugins css -->
+    <link rel="stylesheet" href="/assets/plugins/datatable/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="/assets/plugins/datatable/fixedeader/dataTables.fixedcolumns.bootstrap4.min.css">
+    <link rel="stylesheet" href="/assets/plugins/datatable/fixedeader/dataTables.fixedheader.bootstrap4.min.css">
+    <style>
+    td.details-control {
+        background: url('/assets/images/details_open.png') no-repeat center center;
+        cursor: pointer;
+    }
+
+    tr.shown td.details-control {
+        background: url('/assets/images/details_close.png') no-repeat center center;
+    }
+    </style>
 
     <!-- Core css -->
     <link rel="stylesheet" href="/assets/css/main.css" />
@@ -453,291 +468,10 @@
                 <h5 class="brand-name">Crush On <a href="javascript:void(0)" class="menu_option float-right"><i
                             class="icon-grid font-16" data-toggle="tooltip" data-placement="left"
                             title="Grid & List Toggle"></i></a></h5>
-                <nav id="left-sidebar-nav" class="sidebar-nav">
-                    <ul class="metismenu">
-                        <li class="g_heading">Directories</li>
-                        <li><a href="index.html"><i class="icon-home"></i><span>Dashboard</span></a></li>
-                        <li><a href="app-calendar.html"><i class="icon-calendar"></i><span>Calendar</span></a></li>
-                        <li><a href="app-chat.html"><i class="icon-speech"></i><span>Chat</span></a></li>
-                        <li><a href="app-contact.html"><i class="icon-notebook"></i><span>Contact</span></a></li>
-                        <li><a href="app-blog.html"><i class="icon-globe"></i><span>Blog</span></a></li>
-                        <li>
-                            <a href="javascript:void(0)" class="has-arrow arrow-c"><i
-                                    class="icon-lock"></i><span>Authentication</span></a>
-                            <ul>
-                                <li><a href="login.html">Login</a></li>
-                                <li><a href="register.html">Register</a></li>
-                                <li><a href="forgot-password.html">Forgot password</a></li>
-                                <li><a href="404.html">404 error</a></li>
-                                <li><a href="500.html">500 error</a></li>
-                            </ul>
-                        </li>
-                        <li class="g_heading">Pages</li>
-                        <li>
-                            <a href="javascript:void(0)" class="has-arrow arrow-c"><i
-                                    class="icon-tag"></i><span>Icons</span></a>
-                            <ul>
-                                <li><a href="icons-feather.html">Feather Icons</a></li>
-                                <li><a href="icons-line.html">Line Icons</a></li>
-                                <li><a href="icons-fontawesome.html">Font Awesome</a></li>
-                                <li><a href="icons-flags.html">Flags Icons</a></li>
-                                <li><a href="icons-payments.html">Payments Icons</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)" class="has-arrow arrow-c"><i
-                                    class="icon-bar-chart"></i><span>Charts</span></a>
-                            <ul>
-                                <li><a href="charts-apex.html">Charts Apex</a></li>
-                                <li><a href="charts-e.html">EChart</a></li>
-                                <li><a href="charts-c3.html">C3 Chart</a></li>
-                                <li><a href="charts-knob.html">JQuery Knob</a></li>
-                                <li><a href="charts-sparkline.html">Sparkline Chart</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)" class="has-arrow arrow-c"><i
-                                    class="icon-layers"></i><span>Forms</span></a>
-                            <ul>
-                                <li><a href="form-elements.html">Basic Elements</a></li>
-                                <li><a href="form-advanced.html">Advanced Elements</a></li>
-                                <li><a href="form-validation.html">Form Validation</a></li>
-                                <li><a href="form-wizard.html">Form Wizard</a></li>
-                                <li><a href="form-summernote.html">Summernote</a></li>
-
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)" class="has-arrow arrow-c"><i
-                                    class="icon-tag"></i><span>Tables</span></a>
-                            <ul>
-                                <li><a href="table-normal.html">Bootstrap Table</a></li>
-                                <li><a href="table-datatable.html">Jquery Datatable</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="widgets.html"><i class="icon-puzzle"></i><span>Widgets</span></a></li>
-                        <li class="g_heading">Extra</li>
-                        <li><a href="page-maps.html"><i class="icon-map"></i><span>Maps</span></a></li>
-                        <li><a href="page-gallery.html"><i class="icon-picture"></i><span>Gallery</span></a></li>
-                        <li class="active">
-                            <a href="javascript:void(0)" class="has-arrow arrow-c"><i
-                                    class="fe fe-file"></i><span>Pages</span></a>
-                            <ul>
-                                <li class="active"><a href="page-empty.html">Empty page</a></li>
-                                <li><a href="page-profile.html">Profile</a></li>
-                                <li><a href="page-search.html">Search Results</a></li>
-                                <li><a href="page-timeline.html">Timeline</a></li>
-                                <li><a href="page-invoices.html">Invoices</a></li>
-                                <li><a href="page-pricing.html">Pricing</a></li>
-                                <li><a href="page-carousel.html">Carousel</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </nav>
+                <?php require SCRIPTS . '/user/menu.php'?>
             </div>
         </div>
 
         <div class="page">
-            <div id="page_top" class="section-body">
-                <div class="container">
-                    <div class="page-header">
-                        <div class="left">
-                            <h1 class="page-title">Page Empty</h1>
-                            <select class="custom-select">
-                                <option>Year</option>
-                                <option>Month</option>
-                                <option>Week</option>
-                            </select>
-                            <div class="input-group xs-hide">
-                                <input type="text" class="form-control" placeholder="Search...">
-                            </div>
-                        </div>
-                        <div class="right">
-                            <ul class="nav nav-pills">
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
-                                        aria-haspopup="true" aria-expanded="false">Language</a>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="#"><img class="w20 mr-2"
-                                                src="/assets/images/flags/us.svg" alt="">English</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="#"><img class="w20 mr-2"
-                                                src="/assets/images/flags/es.svg" alt="">Spanish</a>
-                                        <a class="dropdown-item" href="#"><img class="w20 mr-2"
-                                                src="/assets/images/flags/jp.svg" alt="">japanese</a>
-                                        <a class="dropdown-item" href="#"><img class="w20 mr-2"
-                                                src="/assets/images/flags/bl.svg" alt="">France</a>
-                                    </div>
-                                </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
-                                        aria-haspopup="true" aria-expanded="false">Reports</a>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="#"><i
-                                                class="dropdown-icon fa fa-file-excel-o"></i> MS Excel</a>
-                                        <a class="dropdown-item" href="#"><i
-                                                class="dropdown-icon fa fa-file-word-o"></i> MS Word</a>
-                                        <a class="dropdown-item" href="#"><i class="dropdown-icon fa fa-file-pdf-o"></i>
-                                            PDF</a>
-                                    </div>
-                                </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
-                                        aria-haspopup="true" aria-expanded="false">Project</a>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="#">Graphics Design</a>
-                                        <a class="dropdown-item" href="#">Angular Admin</a>
-                                        <a class="dropdown-item" href="#">PSD to HTML</a>
-                                        <a class="dropdown-item" href="#">iOs App Development</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="#">Home Development</a>
-                                        <a class="dropdown-item" href="#">New Blog post</a>
-                                    </div>
-                                </li>
-                            </ul>
-                            <div class="notification d-flex">
-                                <div class="dropdown d-flex">
-                                    <a class="nav-link icon d-none d-md-flex btn btn-default btn-icon ml-1"
-                                        data-toggle="dropdown"><i class="fa fa-envelope"></i><span
-                                            class="badge badge-success nav-unread"></span></a>
-                                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                        <ul class="right_chat list-unstyled w250 p-0">
-                                            <li class="online">
-                                                <a href="javascript:void(0);">
-                                                    <div class="media">
-                                                        <img class="media-object " src="/assets/images/xs/avatar4.jpg"
-                                                            alt="">
-                                                        <div class="media-body">
-                                                            <span class="name">Donald Gardner</span>
-                                                            <span class="message">Designer, Blogger</span>
-                                                            <span class="badge badge-outline status"></span>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li class="online">
-                                                <a href="javascript:void(0);">
-                                                    <div class="media">
-                                                        <img class="media-object " src="/assets/images/xs/avatar5.jpg"
-                                                            alt="">
-                                                        <div class="media-body">
-                                                            <span class="name">Wendy Keen</span>
-                                                            <span class="message">Java Developer</span>
-                                                            <span class="badge badge-outline status"></span>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li class="offline">
-                                                <a href="javascript:void(0);">
-                                                    <div class="media">
-                                                        <img class="media-object " src="/assets/images/xs/avatar2.jpg"
-                                                            alt="">
-                                                        <div class="media-body">
-                                                            <span class="name">Matt Rosales</span>
-                                                            <span class="message">CEO, anchortheme</span>
-                                                            <span class="badge badge-outline status"></span>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li class="online">
-                                                <a href="javascript:void(0);">
-                                                    <div class="media">
-                                                        <img class="media-object " src="/assets/images/xs/avatar3.jpg"
-                                                            alt="">
-                                                        <div class="media-body">
-                                                            <span class="name">Phillip Smith</span>
-                                                            <span class="message">Writter, Mag Editor</span>
-                                                            <span class="badge badge-outline status"></span>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                        <div class="dropdown-divider"></div>
-                                        <a href="javascript:void(0)"
-                                            class="dropdown-item text-center text-muted-dark readall">Mark all as
-                                            read</a>
-                                    </div>
-                                </div>
-                                <div class="dropdown d-flex">
-                                    <a class="nav-link icon d-none d-md-flex btn btn-default btn-icon ml-1"
-                                        data-toggle="dropdown"><i class="fa fa-bell"></i><span
-                                            class="badge badge-primary nav-unread"></span></a>
-                                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                        <ul class="list-unstyled feeds_widget">
-                                            <li>
-                                                <div class="feeds-left"><i class="fa fa-thumbs-o-up"></i></div>
-                                                <div class="feeds-body">
-                                                    <h4 class="title">7 New Feedback <small
-                                                            class="float-right text-muted">Today</small></h4>
-                                                    <small>It will give a smart finishing to your site</small>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="feeds-left"><i class="fa fa-user"></i></div>
-                                                <div class="feeds-body">
-                                                    <h4 class="title">New User <small
-                                                            class="float-right text-muted">10:45</small></h4>
-                                                    <small>I feel great! Thanks team</small>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="feeds-left"><i class="fa fa-question-circle"></i></div>
-                                                <div class="feeds-body">
-                                                    <h4 class="title text-warning">Server Warning <small
-                                                            class="float-right text-muted">10:50</small></h4>
-                                                    <small>Your connection is not private</small>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="feeds-left"><i class="fa fa-check"></i></div>
-                                                <div class="feeds-body">
-                                                    <h4 class="title text-danger">Issue Fixed <small
-                                                            class="float-right text-muted">11:05</small></h4>
-                                                    <small>WE have fix all Design bug with Responsive</small>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="feeds-left"><i class="fa fa-shopping-cart"></i></div>
-                                                <div class="feeds-body">
-                                                    <h4 class="title">7 New Orders <small
-                                                            class="float-right text-muted">11:35</small></h4>
-                                                    <small>You received a new oder from Tina.</small>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                        <div class="dropdown-divider"></div>
-                                        <a href="javascript:void(0)"
-                                            class="dropdown-item text-center text-muted-dark readall">Mark all as
-                                            read</a>
-                                    </div>
-                                </div>
-                                <div class="dropdown d-flex">
-                                    <a class="nav-link icon d-none d-md-flex btn btn-default btn-icon ml-1"
-                                        data-toggle="dropdown"><i class="fa fa-user"></i></a>
-                                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                        <a class="dropdown-item" href="page-profile.html"><i
-                                                class="dropdown-icon fe fe-user"></i> Profile</a>
-                                        <a class="dropdown-item" href="app-setting.html"><i
-                                                class="dropdown-icon fe fe-settings"></i> Settings</a>
-                                        <a class="dropdown-item" href="app-email.html"><span class="float-right"><span
-                                                    class="badge badge-primary">6</span></span><i
-                                                class="dropdown-icon fe fe-mail"></i> Inbox</a>
-                                        <a class="dropdown-item" href="javascript:void(0)"><i
-                                                class="dropdown-icon fe fe-send"></i> Message</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="javascript:void(0)"><i
-                                                class="dropdown-icon fe fe-help-circle"></i> Need help?</a>
-                                        <a class="dropdown-item" href="login.html"><i
-                                                class="dropdown-icon fe fe-log-out"></i> Sign out</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <div class="section-body">
                 <div class="container">
